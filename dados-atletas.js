@@ -42,50 +42,62 @@ class Atleta {
         let notasOrdenadas = this.notas.sort((a, b) => a - b);
         return notasOrdenadas;
     }
+// Remove a maior e menor nota dos atletas;
 
     removeMaiorMenorNota() {
         let notasOrdenadas = this.notasOrdemCrescente();
         let notasValidas = notasOrdenadas.slice(1, -1);
         return notasValidas;
     }
+// Calcula a média das notas válidas dos atletas;
 
     calculaMediaValida() {
         let notasValidas = this.removeMaiorMenorNota();
         let media = notasValidas.reduce((atl, nota) => atl + nota, 0) / notasValidas.length;
         return media.toFixed(2);
     }
+// Retorna o nome do atleta;
 
     obtemNomeAtleta() {
         return `Nome: ${this.nome}`;
     }
+// Retorna a idade do atleta:
 
     obtemIdadeAtleta() {
         return `Idade: ${this.idade}`;
     }
+// Retorna o peso do atleta;
 
     obtemPesoAtleta() {
         return `Peso: ${this.peso}`;
     }
+// Retorna a altura dos atleta;
 
     obtemAltura() {
         return `Altura: ${this.altura}`;
     }
+// Retorna as notas dos atletas;
 
     obtemNota(){
         return `Notas: ${this.notas}`;
     }
+// Retorna a categoria do atleta por sua idade;
+
     obtemCategoria() {
         return `Categoria: ${this.calculaCategoria()}`;
     }
+//  Retorna o indice de massa corporal do atleta;
 
     obtemIMC() {
         return `IMC: ${this.calculaIMC()}`;
     }
+// Retorna a média das notas válidas do atleta;
 
     obtemMediaValida() {
         return `Média válida: ${this.calculaMediaValida()}`;
     }
 }
+// variavel contendo a relação com os dados dos atletas;
 
 let atletas = [
     {
@@ -117,6 +129,9 @@ let atletas = [
         notas: [10, 10, 10, 9, 9.5]
     }
 ].map(atleta => new Atleta(atleta));
+
+// O laço for cria uma variavel atleta e atribui os dados da variavel atletas;
+// Percorrendo na class Atletas e retornando os dados requisitados pelo console;
 
 for (let atleta of atletas) {
     console.log(atleta.obtemNomeAtleta());
