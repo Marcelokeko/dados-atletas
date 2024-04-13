@@ -135,7 +135,7 @@ let atletas = [
 // O laço for cria uma variavel atleta e atribui os dados da variavel atletas;
 // Percorrendo na class Atletas e retornando os dados requisitados pelo console;
 
-for (let atleta of atletas) {
+for (let atleta of atletas){
     console.log(atleta.obtemNomeAtleta());
     console.log(atleta.obtemIdadeAtleta());
     console.log(atleta.obtemPesoAtleta());
